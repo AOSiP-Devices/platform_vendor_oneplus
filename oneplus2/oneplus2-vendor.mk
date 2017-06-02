@@ -28,6 +28,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oneplus2/proprietary/bin/imscmservice:system/bin/imscmservice \
     vendor/oneplus/oneplus2/proprietary/bin/imsdatadaemon:system/bin/imsdatadaemon \
     vendor/oneplus/oneplus2/proprietary/bin/imsqmidaemon:system/bin/imsqmidaemon \
+    vendor/oneplus/oneplus2/proprietary/bin/iop:system/bin/iop \
     vendor/oneplus/oneplus2/proprietary/bin/ipacm-diag:system/bin/ipacm-diag \
     vendor/oneplus/oneplus2/proprietary/bin/irsc_util:system/bin/irsc_util \
     vendor/oneplus/oneplus2/proprietary/bin/loc_launcher:system/bin/loc_launcher \
@@ -97,6 +98,7 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/com.qti.dpmframework.xml:system/etc/permissions/com.qti.dpmframework.xml \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/com.qti.location.sdk.xml:system/etc/permissions/com.qti.location.sdk.xml \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/com.qualcomm.location.xml:system/etc/permissions/com.qualcomm.location.xml \
+    vendor/oneplus/oneplus2/proprietary/etc/permissions/com.qualcomm.qti.Performance.xml:system/etc/permissions/com.qualcomm.qti.Performance.xml \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/com.quicinc.cne.xml:system/etc/permissions/com.quicinc.cne.xml \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/dpmapi.xml:system/etc/permissions/dpmapi.xml \
     vendor/oneplus/oneplus2/proprietary/etc/permissions/qcnvitems.xml:system/etc/permissions/qcnvitems.xml \
@@ -114,13 +116,18 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/oneplus2/proprietary/framework/dpmapi.jar:system/framework/dpmapi.jar \
     vendor/oneplus/oneplus2/proprietary/framework/qti-telephony-common.jar:system/framework/qti-telephony-common.jar \
     vendor/oneplus/oneplus2/proprietary/framework/tcmclient.jar:system/framework/tcmclient.jar \
-	vendor/oneplus/oneplus2/proprietary/framework/org.codeaurora.camera.jar:/system/framework/org.codeaurora.camera.jar \
+    vendor/oneplus/oneplus2/proprietary/framework/org.codeaurora.camera.jar:/system/framework/org.codeaurora.camera.jar \
     vendor/oneplus/oneplus2/proprietary/lib/hw/fingerprint.msm8994.so:system/lib/hw/fingerprint.msm8994.so \
     vendor/oneplus/oneplus2/proprietary/lib/libFNVfbEngineLib.so:system/lib/libFNVfbEngineLib.so \
     vendor/oneplus/oneplus2/proprietary/lib/lib_fpc_tac_shared.so:system/lib/lib_fpc_tac_shared.so \
+    vendor/oneplus/oneplus2/proprietary/lib/libqti-iop-client.so:system/lib/libqti-iop-client.so \
+    vendor/oneplus/oneplus2/proprietary/lib/libqti_performance.so:system/lib/libqti_performance.so \
     vendor/oneplus/oneplus2/proprietary/lib64/hw/fingerprint.msm8994.so:system/lib64/hw/fingerprint.msm8994.so \
     vendor/oneplus/oneplus2/proprietary/lib64/lib_fpc_tac_shared.so:system/lib64/lib_fpc_tac_shared.so \
     vendor/oneplus/oneplus2/proprietary/lib64/libparam.so:system/lib64/libparam.so \
+    vendor/oneplus/oneplus2/proprietary/lib64/libqti-iop.so:system/lib64/libqti-iop.so \
+    vendor/oneplus/oneplus2/proprietary/lib64/libqti-iop-client.so:system/lib64/libqti-iop-client.so \
+    vendor/oneplus/oneplus2/proprietary/lib64/libqti_performance.so:system/lib64/libqti_performance.so \
     vendor/oneplus/oneplus2/proprietary/vendor/bin/perfd:system/vendor/bin/perfd \
     vendor/oneplus/oneplus2/proprietary/vendor/bin/qti:system/vendor/bin/qti \
     vendor/oneplus/oneplus2/proprietary/vendor/bin/slim_daemon:system/vendor/bin/slim_daemon \
@@ -522,7 +529,8 @@ PRODUCT_PACKAGES += \
     imssettings \
     qcnvitems \
     qcrilhook \
-    pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel
+    pp_calib_data_jd35695_1080p_cmd_mode_dsi_panel \
+    QPerformance
 
 # OxygenOS 3 Camera
 PRODUCT_PACKAGES += \
@@ -532,3 +540,5 @@ PRODUCT_PACKAGES += \
     libimsmedia_jni \
     secure_camera_sample_client \
     OnePlusCamera
+
+PRODUCT_BOOT_JARS += QPerformance
