@@ -768,11 +768,12 @@ PRODUCT_PACKAGES += \
     ims \
     imssettings \
     qcnvitems \
-    qcrilhook
+    qcrilhook \
+    QPerformance
 endif
 
--include vendor/extra/devices.mk
-ifneq ($(call is-qc-perf-target),true)
+PRODUCT_BOOT_JARS := QPerformance
+
 PRODUCT_COPY_FILES += \
     vendor/oneplus/cheeseburger/proprietary/bin/iop:system/bin/iop \
     vendor/oneplus/cheeseburger/proprietary/vendor/bin/perfd:system/vendor/bin/perfd \
@@ -783,14 +784,17 @@ PRODUCT_COPY_FILES += \
     vendor/oneplus/cheeseburger/proprietary/vendor/etc/perf-profile4.conf:system/vendor/etc/perf-profile4.conf \
     vendor/oneplus/cheeseburger/proprietary/vendor/etc/perf-profile5.conf:system/vendor/etc/perf-profile5.conf \
     vendor/oneplus/cheeseburger/proprietary/vendor/etc/perf-profile6.conf:system/vendor/etc/perf-profile6.conf \
+    vendor/oneplus/cheeseburger/proprietary/etc/permissions/com.qualcomm.qti.Performance.xml:system/etc/permissions/com.qualcomm.qti.Performance.xml \
+    vendor/oneplus/cheeseburger/proprietary/framework/QPerformance.jar:system/framework/QPerformance.jar \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti-iop-client.so:system/vendor/lib/libqti-iop-client.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti-iop.so:system/vendor/lib/libqti-iop.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti-perfd-client.so:system/vendor/lib/libqti-perfd-client.so \
+    vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti_performance.so:system/lib/libqti_performance.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti-util.so:system/vendor/lib/libqti-util.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib/libqti-utils.so:system/vendor/lib/libqti-utils.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti-iop-client.so:system/vendor/lib64/libqti-iop-client.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti-iop.so:system/vendor/lib64/libqti-iop.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti-perfd-client.so:system/vendor/lib64/libqti-perfd-client.so \
+    vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti_performance.so:system/lib64/libqti_performance.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti-util.so:system/vendor/lib64/libqti-util.so \
     vendor/oneplus/cheeseburger/proprietary/vendor/lib64/libqti-utils.so:system/vendor/lib64/libqti-utils.so
-endif
